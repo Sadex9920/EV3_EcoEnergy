@@ -1,0 +1,234 @@
+[
+  {
+    "model": "dispositivos.category",
+    "pk": 1,
+    "fields": {
+      "name": "Iluminación",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.category",
+    "pk": 2,
+    "fields": {
+      "name": "Climatización",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.category",
+    "pk": 3,
+    "fields": {
+      "name": "Electrodomésticos",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Empresa ABC S.A.",
+      "email": "contacto@empresaabc.com",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Corporación XYZ Ltda.",
+      "email": "info@corporacionxyz.com",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.zone",
+    "pk": 1,
+    "fields": {
+      "name": "Oficina Principal",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.zone",
+    "pk": 2,
+    "fields": {
+      "name": "Área de Producción",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.zone",
+    "pk": 3,
+    "fields": {
+      "name": "Almacén",
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.device",
+    "pk": 1,
+    "fields": {
+      "name": "Lámpara LED Principal",
+      "category": 1,
+      "zone": 1,
+      "max_usage": 50,
+      "organization": 1,
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.device",
+    "pk": 2,
+    "fields": {
+      "name": "Aire Acondicionado",
+      "category": 2,
+      "zone": 1,
+      "max_usage": 2000,
+      "organization": 1,
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.device",
+    "pk": 3,
+    "fields": {
+      "name": "Refrigerador Industrial",
+      "category": 3,
+      "zone": 2,
+      "max_usage": 1500,
+      "organization": 2,
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.device",
+    "pk": 4,
+    "fields": {
+      "name": "Computadora de Escritorio",
+      "category": 3,
+      "zone": 1,
+      "max_usage": 300,
+      "organization": 1,
+      "state": "ACTIVE",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.measurement",
+    "pk": 1,
+    "fields": {
+      "device": 1,
+      "date": "2024-01-15T08:00:00Z",
+      "usage": 45.5,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T08:00:00Z",
+      "updated_at": "2024-01-15T08:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.measurement",
+    "pk": 2,
+    "fields": {
+      "device": 1,
+      "date": "2024-01-15T09:00:00Z",
+      "usage": 48.2,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T09:00:00Z",
+      "updated_at": "2024-01-15T09:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.measurement",
+    "pk": 3,
+    "fields": {
+      "device": 2,
+      "date": "2024-01-15T08:00:00Z",
+      "usage": 1850.0,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T08:00:00Z",
+      "updated_at": "2024-01-15T08:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.measurement",
+    "pk": 4,
+    "fields": {
+      "device": 3,
+      "date": "2024-01-15T08:00:00Z",
+      "usage": 1420.5,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T08:00:00Z",
+      "updated_at": "2024-01-15T08:00:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.alert",
+    "pk": 1,
+    "fields": {
+      "device": 2,
+      "message": "Consumo excesivo detectado en aire acondicionado",
+      "date": "2024-01-15T10:30:00Z",
+      "level": "HIGH",
+      "is_resolved": false,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T10:30:00Z",
+      "updated_at": "2024-01-15T10:30:00Z",
+      "deleted_at": null
+    }
+  },
+  {
+    "model": "dispositivos.alert",
+    "pk": 2,
+    "fields": {
+      "device": 3,
+      "message": "Dispositivo funcionando correctamente",
+      "date": "2024-01-15T11:00:00Z",
+      "level": "LOW",
+      "is_resolved": true,
+      "state": "ACTIVE",
+      "created_at": "2024-01-15T11:00:00Z",
+      "updated_at": "2024-01-15T11:00:00Z",
+      "deleted_at": null
+    }
+  }
+]
