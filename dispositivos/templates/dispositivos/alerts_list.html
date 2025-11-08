@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Agregar Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-musgo {
+            background-color: #556B2F !important; /* Verde musgo */
+        }
+        .banner {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        .menu-text {
+            font-size: 1.2rem; /* Tamaño reducido para las opciones del menú */
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .alert-high {
+            color: rgb(255, 94, 0);
+            font-weight: bold;
+        }
+        .alert-mid {
+            color: rgb(221, 255, 0);
+        }
+        .alert-critical {
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="row banner">
+        <div class="col-3 bg-musgo text-white p-3">
+            <div class="logo-container">
+                <i class="fas fa-bolt text-warning" style="font-size: 1.8rem;"></i>
+                <h2 class="menu-text m-0"><a href="{% url 'panel' %}" class="text-white text-decoration-none">{{empresa}}</a></h2>
+            </div>
+        </div>
+        <div class="col-2 bg-musgo text-white text-center p-3">
+            <h2 class="menu-text"><a href="{% url 'alerts_list' %}" class="text-white text-decoration-none">Alertas</a></h2>
+        </div>
+        <div class="col-2 bg-musgo text-white text-center p-3">
+            <h2 class="menu-text"><a href="{% url 'devices_list' %}" class="text-white text-decoration-none">Dispositivos</a></h2>
+        </div>
+        <div class="col-2 bg-musgo text-white text-center p-3">
+            <h2 class="menu-text"><a href="{% url 'measurements_list' %}" class="text-white text-decoration-none">Mediciones</a></h2>
+        </div>
+        <div class="col-3 bg-musgo text-white text-center p-3">
+            <h2 class="menu-text"><a href="{% url 'iniciarSesion' %}" class="text-white text-decoration-none">Cerrar Sesion</a></h2>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <h3>Alertas Semanales</h3>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nivel</th>
+                    <th scope="col">Mensaje</th>
+                    <th scope="col">Dispositivo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alert in alerts %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>
+                        {% if alert.level == "HIGH" %}
+                        <span class="alert-high">HIGH</span>
+                        {% elif alert.level == "MID" %}
+                        <span class="alert-mid">MID</span>
+                        {% else %}
+                        <span class="alert-critical">CRITICAL</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ alert.message }}</td>
+                    <td>{{ alert.device.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
